@@ -1,0 +1,26 @@
+<h1>物件登録</h1>
+<p><%= link_to "一覧に戻る", props_path %></p>
+<% if @prop.errors.any? %>
+  <div class="error_display">
+    <% @prop.errors.full_messages.each do |message| %>
+      <ul>
+        <li><%= message %></li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>
+
+<%= form_with(model:@prop, local:true) do |form| %>
+  <p><%= form.label :name %></p>
+  <p><%= form.text_field :name %></p>
+  <p><%= form.label :address %></p>
+  <p><%= form.text_field :address %></p>
+  <p><%= form.label :rent %></p>
+  <p><%= form.text_field :rent %></p>
+  <p><%= form.label :years_old %></p>
+  <p><%= form.text_field :years_old %></p>
+  <p><%= form.label :comment %></p>
+  <p><%= form.text_area :comment %></p>
+  <p><%= form.submit "登録する" %></p>
+  <p><%= link_to "戻る", props_path %></p>
+<% end %>
