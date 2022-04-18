@@ -1,5 +1,14 @@
 <h1>物件登録</h1>
 <p><%= link_to "一覧に戻る", props_path %></p>
+<% if @prop.errors.any? %>
+  <div class="error_display">
+    <% @prop.errors.full_messages.each do |message| %>
+      <ul>
+        <li><%= message %></li>
+      </ul>
+    <% end %>
+  </div>
+<% end %>
 
 <%= form_with(model:@prop, local:true) do |form| %>
   <p><%= form.label :name %></p>
