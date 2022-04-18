@@ -19,6 +19,6 @@ class PropsController < ApplicationController
   private
 
   def prop_params
-    params.require(:prop).permit(:name,:rent,:years_old,:comment)
+    params.require(:prop).permit(:name,:address,:rent,:years_old,:comment)
   end
 end
