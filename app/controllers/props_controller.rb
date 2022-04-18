@@ -17,6 +17,10 @@ class PropsController < ApplicationController
     end
   end
 
+  def show
+    @prop = Prop.find(params[:id])
+  end
+
   private
 
   def prop_params
