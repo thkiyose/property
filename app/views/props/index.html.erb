@@ -6,7 +6,7 @@
   </tr>
   <% @props.each do |prop| %>
     <tr>
-      <td><%= prop.name %></td><td><%= prop.rent.to_s(:delimited) %>円</td><td><%= prop.address %></td><td><%= prop.years_old %>年</td><td><%= prop.comment %></td><td><%= link_to "詳細", prop_path(prop.id) %></td>
+      <td><%= prop.name %></td><td><%= prop.rent.to_s(:delimited) %>円</td><td><%= prop.address %></td><td><%= prop.years_old %>年</td><td><%= prop.comment %></td><td><%= link_to "詳細", prop_path(prop.id) %></td><td><%= link_to "編集", edit_prop_path(prop.id) %></td>
     </tr>
   <% end %>
 </table>

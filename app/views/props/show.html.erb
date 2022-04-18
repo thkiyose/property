@@ -6,5 +6,5 @@
 <p><%= @prop.comment %></p>
 
 <div class="bottom_link">
-  <%= link_to "戻る", props_path %>
+  <%= link_to "編集", edit_prop_path(@prop.id) %> | <%= link_to "戻る", props_path %>
 </div>
