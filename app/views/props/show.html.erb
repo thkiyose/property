@@ -1,0 +1,10 @@
+<p><span class="show_label">物件名:</span><%= @prop.name %></p>
+<p><span class="show_label">賃料:</span><% if presence_or_not_display(@prop.rent) %><%= @prop.rent.to_s(:delimited) %>円<% end %></p>
+<p><span class="show_label">住所:</span><%= @prop.address %></p>
+<p><span class="show_label">築年数:</span><% if presence_or_not_display(@prop.years_old) %><%= @prop.years_old %>年<% end %></p>
+<p><span class="show_label">備考:</span></p>
+<p><%= presence_or_not_display(@prop.comment) %></p>
+
+<div class="bottom_link">
+  <%= link_to "編集", edit_prop_path(@prop.id) %> | <%= link_to "戻る", props_path %>
+</div>

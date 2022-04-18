@@ -17,6 +17,24 @@ class PropsController < ApplicationController
     end
   end
 
+  def show
+    @prop = Prop.find(params[:id])
+  end
+
+  def edit
+    @prop = Prop.find(params[:id])
+  end
+
+  def update
+    @prop = Prop.find(params[:id])
+    if @prop.update(prop_params)
+      redirect_to props_path
+      flash[:notice] = "物件を編集しました。"
+    else
+      render :edit
+    end
+  end
+
   private
 
   def prop_params
