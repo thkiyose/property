@@ -1,0 +1,10 @@
+<p><span class="show_label">物件名:</span><%= @prop.name %></p>
+<p><span class="show_label">賃料:</span><%= @prop.rent.to_s(:delimited) %>円</p>
+<p><span class="show_label">住所:</span><%= @prop.address %></p>
+<p><span class="show_label">築年数:</span><%= @prop.years_old %></p>
+<p><span class="show_label">備考:</span></p>
+<p><%= @prop.comment %></p>
+
+<div class="bottom_link">
+  <%= link_to "戻る", props_path %>
+</div>
