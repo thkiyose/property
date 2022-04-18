@@ -26,8 +26,10 @@ class PropsController < ApplicationController
   end
 
   def update
+    @prop = Prop.find(params[:id])
     if @prop.update(prop_params)
-      redirect_to props_path, flash[:notice] = "物件を編集しました。"
+      redirect_to props_path
+      flash[:notice] = "物件を編集しました。"
     else
       render :edit
     end
