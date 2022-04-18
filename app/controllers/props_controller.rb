@@ -11,6 +11,7 @@ class PropsController < ApplicationController
     @prop = Prop.new(prop_params)
     if @prop.save
       redirect_to props_path
+      flash[:notice] = "物件を登録しました。"
     else
       render :new
     end
