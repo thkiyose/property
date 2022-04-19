@@ -1,4 +1,6 @@
 class PropsController < ApplicationController
+before_action :set_prop, only: [:show,:edit,:update,:destroy]
+
   def index
     @props = Prop.all
   end
@@ -18,15 +20,12 @@ class PropsController < ApplicationController
   end
 
   def show
-    @prop = Prop.find(params[:id])
   end
 
   def edit
-    @prop = Prop.find(params[:id])
   end
 
   def update
-    @prop = Prop.find(params[:id])
     if @prop.update(prop_params)
       redirect_to props_path
       flash[:notice] = "物件を編集しました。"
@@ -35,9 +34,19 @@ class PropsController < ApplicationController
     end
   end
 
+  def destroy
+    @prop.destroy
+    redirect_to props_path
+    flash[:notice] = "物件を削除しました。"
+  end
+
   private
 
   def prop_params
     params.require(:prop).permit(:name,:address,:rent,:years_old,:comment)
+  end
+
+  def set_prop
+    @prop = Prop.find(params[:id])
   end
 end
