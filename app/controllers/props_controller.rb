@@ -7,6 +7,7 @@ before_action :set_prop, only: [:show,:edit,:update,:destroy]
 
   def new
     @prop = Prop.new
+    2.times{ @prop.stations.build }
   end
 
   def create
@@ -23,6 +24,7 @@ before_action :set_prop, only: [:show,:edit,:update,:destroy]
   end
 
   def edit
+    @prop.stations.build
   end
 
   def update
@@ -43,7 +45,7 @@ before_action :set_prop, only: [:show,:edit,:update,:destroy]
   private
 
   def prop_params
-    params.require(:prop).permit(:name,:address,:rent,:years_old,:comment)
+    params.require(:prop).permit(:name,:address,:rent,:years_old,:comment,stations_attributes:[:line_name,:station_name,:minutes,:id])
   end
 
   def set_prop
