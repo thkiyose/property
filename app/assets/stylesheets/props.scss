@@ -1,3 +1,7 @@
+a {
+  text-decoration: none;
+}
+
 .properties td {
   padding: 10px;
 }
@@ -9,4 +13,17 @@
 .show_label {
   font-weight: bold;
   padding-right: 20px;
+}
+
+.delete_button {
+  padding: 0;
+  color: blue;
+  font-size: 1rem;
+  background-color: rgb(249, 107, 137);
+  background: transparent;
+  border: 0;
+}
+
+.delete_button:hover {
+  cursor: pointer;
 }
