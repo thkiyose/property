@@ -21,14 +21,13 @@
     <p><%= form.text_area :comment %></p>
   </div>
   <div class="stations_form">
-    <% @stations.each do |station| %>
-      <%= form.fields_for :stations do |s|%>
-        <p><%= s.label :line_name %></p>
-        <p><%= s.text_field :line_name %></p>
-        <p><%= s.label :station_name %></p>
-        <p><%= s.text_field :station_name %></p>
-        <p><%= s.label :minutes %></p>
-        <p><%= s.text_field :minutes %></p>
+    <%= form.fields_for :stations do |s|%>
+      <p><%= s.label :line_name %></p>
+      <p><%= s.text_field :line_name %></p>
+      <p><%= s.label :station_name %></p>
+      <p><%= s.text_field :station_name %></p>
+      <p><%= s.label :minutes %></p>
+      <p><%= s.text_field :minutes %></p>
     <% end %>
   </div>
   <p><%= form.submit "登録する" %></p>
