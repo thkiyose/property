@@ -5,4 +5,5 @@ class Prop < ApplicationRecord
   validates :years_old, numericality: { only_integer: true }, length: { maximum: 3}, allow_blank: true
   validates :comment, length: { maximum: 300 }
   has_many :stations, dependent: :destroy
+  accepts_nested_attributes_for :stations
 end

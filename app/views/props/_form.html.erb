@@ -7,17 +7,29 @@
     <% end %>
   </div>
 <% end %>
-
 <%= form_with(model:@prop, local:true) do |form| %>
-  <p><%= form.label :name %></p>
-  <p><%= form.text_field :name %></p>
-  <p><%= form.label :address %></p>
-  <p><%= form.text_field :address %></p>
-  <p><%= form.label :rent %></p>
-  <p><%= form.text_field :rent %></p>
-  <p><%= form.label :years_old %></p>
-  <p><%= form.text_field :years_old %></p>
-  <p><%= form.label :comment %></p>
-  <p><%= form.text_area :comment %></p>
+  <div class="prop_form">
+    <p><%= form.label :name %></p>
+    <p><%= form.text_field :name %></p>
+    <p><%= form.label :address %></p>
+    <p><%= form.text_field :address %></p>
+    <p><%= form.label :rent %></p>
+    <p><%= form.text_field :rent %></p>
+    <p><%= form.label :years_old %></p>
+    <p><%= form.text_field :years_old %></p>
+    <p><%= form.label :comment %></p>
+    <p><%= form.text_area :comment %></p>
+  </div>
+  <div class="stations_form">
+    <% @stations.each do |station| %>
+      <%= form.fields_for :stations do |s|%>
+        <p><%= s.label :line_name %></p>
+        <p><%= s.text_field :line_name %></p>
+        <p><%= s.label :station_name %></p>
+        <p><%= s.text_field :station_name %></p>
+        <p><%= s.label :minutes %></p>
+        <p><%= s.text_field :minutes %></p>
+    <% end %>
+  </div>
   <p><%= form.submit "登録する" %></p>
 <% end %>
