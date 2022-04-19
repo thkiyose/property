@@ -4,7 +4,16 @@
 <p><span class="show_label">築年数:</span><% if presence_or_not_display(@prop.years_old) %><%= @prop.years_old %>年<% end %></p>
 <p><span class="show_label">備考:</span></p>
 <p><%= presence_or_not_display(@prop.comment) %></p>
-
+<div class="show_stations">
+  <% count = 0 %>
+  <% @prop.stations.each do |station| %>
+    <% count += 1 %>
+    <h3>最寄り駅<%= count %></h3>
+    <p><span class="show_label">路線名:</span><%= station.line_name %></p>
+    <p><span class="show_label">駅名:</span><%= station.station_name %></p>
+    <p><span class="show_label">徒歩分数:</span><%= station.minutes %></p>
+  <% end %>
+</div>
 <div class="bottom_link">
   <%= link_to "編集", edit_prop_path(@prop.id) %> | <%= link_to "戻る", props_path %>
 </div>
