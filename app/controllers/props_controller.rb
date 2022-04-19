@@ -44,7 +44,7 @@ before_action :set_prop, only: [:show,:edit,:update,:destroy]
   private
 
   def prop_params
-    params.require(:prop).permit(:name,:address,:rent,:years_old,:comment,stations_attributes:[:line_name,:station_name,:minutes])
+    params.require(:prop).permit(:name,:address,:rent,:years_old,:comment,stations_attributes:[:line_name,:station_name,:minutes,:id])
   end
 
   def set_prop
