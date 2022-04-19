@@ -24,6 +24,7 @@ before_action :set_prop, only: [:show,:edit,:update,:destroy]
   end
 
   def edit
+    @prop.stations.build
   end
 
   def update
