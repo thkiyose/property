@@ -7,7 +7,7 @@ before_action :set_prop, only: [:show,:edit,:update,:destroy]
 
   def new
     @prop = Prop.new
-    @prop.stations.build
+    2.times{ @prop.stations.build }
   end
 
   def create

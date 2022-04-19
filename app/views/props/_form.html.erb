@@ -21,7 +21,10 @@
     <p><%= form.text_area :comment %></p>
   </div>
   <div class="stations_form">
+    <% count = 0 %>
     <%= form.fields_for :stations do |s|%>
+      <% count += 1 %>
+      <h3>最寄り駅<%= count %></h3>
       <p><%= s.label :line_name %></p>
       <p><%= s.text_field :line_name %></p>
       <p><%= s.label :station_name %></p>
